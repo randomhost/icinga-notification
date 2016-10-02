@@ -1,0 +1,36 @@
+{
+    "name": "randomhost/icinga-notification",
+    "type": "library",
+    "description": "Provides common notification commands for the randomhost/icinga package.",
+    "keywords": [
+        "Icinga",
+        "Nagios"
+    ],
+    "homepage": "https://www.random-host.com",
+    "license": "New-BSD",
+    "authors": [
+        {
+            "name": "Ch'Ih-Yu",
+            "email": "chi-yu@web.de"
+        }
+    ],
+    "config": {
+        "platform": {
+            "php": "5.3.3"
+        }
+    },
+    "require": {
+        "php": ">=5.3.0",
+        "randomhost/icinga": "~0.2"
+    },
+    "require-dev": {
+        "behat/behat": "~2.0",
+        "phpunit/phpunit": "~4.0",
+        "phpspec/phpspec": "~2.4"
+    },
+    "autoload": {
+        "psr-4": {
+            "randomhost\\Icinga\\Notification\\": "src/php/"
+        }
+    }
+}
