@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="description" content="randomhost/icinga-notification : Provides common notification commands for the randomhost/icinga package">
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>randomhost/icinga-notification</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/randomhost/icinga-notification">View on GitHub</a>
+
+          <h1 id="project_title">randomhost/icinga-notification</h1>
+          <h2 id="project_tagline">Provides common notification commands for the randomhost/icinga package</h2>
+
+            <section id="downloads">
+              <a class="zip_download_link" href="https://github.com/randomhost/icinga-notification/zipball/master">Download this project as a .zip file</a>
+              <a class="tar_download_link" href="https://github.com/randomhost/icinga-notification/tarball/master">Download this project as a tar.gz file</a>
+            </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <p><a href="https://travis-ci.org/randomhost/icinga-notification"><img src="https://travis-ci.org/randomhost/icinga-notification.svg?branch=master" alt="Build Status"></a></p>
+
+<h1>
+<a id="introduction" class="anchor" href="#introduction" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Introduction</h1>
+
+<p>This package provides a set of common notification commands to a accompany the
+<code>randomhost/icinga</code> package.</p>
+
+<h2>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>A basic approach at using the notification plugins contained within this package
+could look like this:</p>
+
+<div class="highlight highlight-text-html-php"><pre><span class="pl-pse">&lt;?php</span><span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">namespace</span> <span class="pl-en">randomhost\Icinga\Notification</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">require_once</span> <span class="pl-s"><span class="pl-pds">'</span>/path/to/vendor/autoload.php<span class="pl-pds">'</span></span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-k">use</span> <span class="pl-c1">randomhost\NotifyMyAndroid\Client</span> <span class="pl-k">as</span> <span class="pl-c1">NmaClient</span>;</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$nmaClient</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">NmaClient</span>();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-smi">$notification</span> <span class="pl-k">=</span> <span class="pl-k">new</span> <span class="pl-c1">NotifyMyAndroid</span>(<span class="pl-smi">$nmaClient</span>);</span>
+<span class="pl-s1"><span class="pl-smi">$notification</span><span class="pl-k">-&gt;</span>run();</span>
+<span class="pl-s1"></span>
+<span class="pl-s1"><span class="pl-c1">echo</span> <span class="pl-smi">$notification</span><span class="pl-k">-&gt;</span>getMessage();</span>
+<span class="pl-s1"><span class="pl-k">exit</span>(<span class="pl-smi">$notification</span><span class="pl-k">-&gt;</span>getCode());</span></pre></div>
+
+<p>This will instantiate the NotifyMyAndroid notification plugin and send a push
+notification to the NMA API key provided on the command line.</p>
+
+<h2>
+<a id="license" class="anchor" href="#license" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>License</h2>
+
+<p>See LICENSE.txt for full license details.</p>
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">randomhost/icinga-notification maintained by <a href="https://github.com/randomhost">randomhost</a></p>
+        <p>Published with <a href="https://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>

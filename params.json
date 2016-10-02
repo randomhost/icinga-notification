@@ -1,0 +1,6 @@
+{
+  "name": "randomhost/icinga-notification",
+  "tagline": "Provides common notification commands for the randomhost/icinga package",
+  "body": "[![Build Status][0]][1]\r\n\r\nIntroduction\r\n============\r\n\r\nThis package provides a set of common notification commands to a accompany the\r\n`randomhost/icinga` package.\r\n\r\nUsage\r\n-----\r\n\r\nA basic approach at using the notification plugins contained within this package\r\ncould look like this:\r\n\r\n```php\r\n<?php\r\nnamespace randomhost\\Icinga\\Notification;\r\n\r\nrequire_once '/path/to/vendor/autoload.php';\r\n\r\nuse randomhost\\NotifyMyAndroid\\Client as NmaClient;\r\n\r\n$nmaClient = new NmaClient();\r\n\r\n$notification = new NotifyMyAndroid($nmaClient);\r\n$notification->run();\r\n\r\necho $notification->getMessage();\r\nexit($notification->getCode());\r\n```\r\n\r\nThis will instantiate the NotifyMyAndroid notification plugin and send a push\r\nnotification to the NMA API key provided on the command line.\r\n\r\nLicense\r\n-------\r\n\r\nSee LICENSE.txt for full license details.\r\n\r\n\r\n[0]: https://travis-ci.org/randomhost/icinga-notification.svg?branch=master\r\n[1]: https://travis-ci.org/randomhost/icinga-notification\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}
