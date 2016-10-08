@@ -12,9 +12,27 @@ namespace randomhost\Icinga\Notification;
 
 use randomhost\NotifyMyAndroid\Client as NmaClient;
 
-require_once realpath(__DIR__ . '/../../vendor') . '/autoload.php';
+// require autoload.php
+$paths = array(
+    __DIR__ . '/../../../../autoload.php',
+    __DIR__ . '/../../../vendor/autoload.php',
+    __DIR__ . '/../../vendor/autoload.php',
+);
+foreach ($paths as $autoload) {
+    if (file_exists($autoload)) {
+        require $autoload;
+        break;
+    }
+}
+unset($paths, $autoload);
 
 $notification = new NotifyMyAndroid(new NmaClient());
+$notification->setOptions(
+    getopt(
+        $notification->getShortOptions(),
+        $notification->getLongOptions()
+    )
+);
 $notification->run();
 
 echo $notification->getMessage();
