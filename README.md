@@ -29,6 +29,12 @@ use randomhost\NotifyMyAndroid\Client as NmaClient;
 $nmaClient = new NmaClient();
 
 $notification = new NotifyMyAndroid($nmaClient);
+$notification->setOptions(
+    getopt(
+        $notification->getShortOptions(),
+        $notification->getLongOptions()
+    )
+);
 $notification->run();
 
 echo $notification->getMessage();
