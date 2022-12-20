@@ -1,0 +1,31 @@
+#!/usr/bin/env php
+<?php
+
+/**
+ * Sends Icinga SMS notifications via CM.com.
+ *
+ * @author    Ch'Ih-Yu <chi-yu@web.de>
+ * @copyright 2025 Random-Host.tv
+ * @license   https://opensource.org/licenses/BSD-3-Clause BSD License (3 Clause)
+ *
+ * @see https://github.random-host.tv
+ */
+
+use randomhost\Icinga\Notification\CmDotCom\Factory;
+
+include $_composer_autoload_path ?? __DIR__.'/../../vendor/autoload.php';
+
+$notification = (new Factory())->getNotification();
+$notification
+    ->setOptions(
+        getopt(
+            $notification->getShortOptions(),
+            $notification->getLongOptions()
+        )
+    )
+    ->run()
+;
+
+echo $notification->getMessage();
+
+exit($notification->getCode());
