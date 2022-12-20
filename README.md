@@ -1,22 +1,31 @@
-[![Build Status][0]][1]
+[![Build Status][1]][2]
 
-randomhost/icinga-notification
-==============================
+# randomhost/icinga-notification
 
-This package provides a set of common notification commands to a accompany the
-`randomhost/icinga` package.
+<!-- TOC -->
+* [1. Purpose](#1-purpose)
+* [2. Usage](#2-usage)
+  * [2.1. CM.com](#21-cmcom)
+    * [2.1.1. Usage Example](#211-usage-example)
+    * [2.1.2. Command Line Parameters](#212-command-line-parameters)
+* [3. License](#3-license)
+<!-- TOC -->
 
-Usage
------
+## 1. Purpose
+
+This package provides a set of common notification commands to accompany the
+[`randomhost/icinga`][3] package.
+
+## 2. Usage
 
 `NotifyMyAndroid` is currently the only available notification plugin but more
 will follow in the future.
 
-### NotifyMyAndroid
+### 2.1. CM.com
 
-Sends notifications using [NotifyMyAndroid][2].
+Sends notifications using [CM.com][4].
 
-#### Usage example
+#### 2.1.1. Usage Example
 
 ```php
 <?php
@@ -41,28 +50,29 @@ echo $notification->getMessage();
 exit($notification->getCode());
 ```
 
-This will instantiate the NotifyMyAndroid notification plugin and send a push
-notification to the NMA API key provided on the command line.
+This will instantiate the CM.com notification plugin and send a text message to
+the phone number provided on the command line.
 
-#### Command line parameters
+#### 2.1.2. Command Line Parameters
 
-| Parameter           | Description             |
-| ------------------- | ----------------------- |
-| --type              | Notification type       |
-| --service           | Service name            |
-| --host              | Host name               |
-| --address           | Host address            |
-| --state             | Service state           |
-| --time              | Notification time       |
-| --output            | Check plugin output     |
-| --apikey            | NotifyMyAndroid API key |
+| Parameter   | Description                                              |
+|-------------|----------------------------------------------------------|
+| `--type`    | Notification type                                        |
+| `--service` | Service name                                             |
+| `--host`    | Host name                                                |
+| `--address` | Host address                                             |
+| `--state`   | Service state                                            |
+| `--time`    | Notification time                                        |
+| `--output`  | Check plugin output                                      |
+| `--phone`   | Phone number in international format (e.g. +12065550199) |
+| `--apikey`  | CM.com API key                                           |
 
-License
--------
+## 3. License
 
 See LICENSE.txt for full license details.
 
 
-[0]: https://travis-ci.org/randomhost/icinga-notification.svg?branch=master
-[1]: https://travis-ci.org/randomhost/icinga-notification
-[2]: http://notifymyandroid.com
+[1]: https://github.com/randomhost/icinga-notification/actions/workflows/php.yml/badge.svg
+[2]: https://github.com/randomhost/icinga-notification/actions/workflows/php.yml
+[3]: https://github.com/randomhost/icinga-notification
+[4]: https://cm.com
