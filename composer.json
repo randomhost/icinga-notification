@@ -30,6 +30,9 @@
         "phpspec/prophecy": "^1.16",
         "phpspec/prophecy-phpunit": "^2.0"
     },
+    "bin": [
+        "src/bin/icinga-notify-cmtext"
+    ],
     "autoload": {
         "psr-4": {
             "randomhost\\Icinga\\Notification\\": "src/php/"

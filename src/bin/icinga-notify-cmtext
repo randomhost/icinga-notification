@@ -11,7 +11,7 @@
  * @see https://github.random-host.tv
  */
 
-use randomhost\Icinga\Notification\CmDotCom\Factory;
+namespace randomhost\Icinga\Notification\CmDotCom;
 
 include $_composer_autoload_path ?? __DIR__.'/../../vendor/autoload.php';
 
